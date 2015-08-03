@@ -15,7 +15,7 @@ namespace Wonga.SLAMonitor.Async
         /// </summary>
         public IEnumerable<MessageDefinition> GetRequestDefinitions(object requestMessage)
         {
-            return _definitions.Where(d => d.Request.Type.IsInstanceOfType(requestMessage)).Select(d => d.Request);
+            return _definitions.Where(d => d.Request.Type.IsInstanceOfType(requestMessage)).Select(d => d.Request).Distinct();
         }
 
 

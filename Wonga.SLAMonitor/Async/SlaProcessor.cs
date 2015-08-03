@@ -52,12 +52,17 @@ namespace Wonga.SLAMonitor.Async
 
                 watch.Stop();
 
-                Action<string, object[]> log = _logger.DebugFormat;
-                if (watch.Elapsed > definition.Sla)
-                    log = _logger.ErrorFormat;
-
-                log("SLA={0} Response={1} ResponseTime={2} milliseconds CorrelationId={3}", new object[] { definition.Request.Type, definition.Response.Type, watch.ElapsedMilliseconds, correlationId });
+                ProcessSla(definition, watch.Elapsed, correlationId);
             }
+        }
+
+        protected virtual void ProcessSla(SlaDefinition definition, TimeSpan elapsed, Guid correlationId)
+        {
+            Action<string, object[]> log = _logger.DebugFormat;
+            if (elapsed > definition.Sla)
+                log = _logger.ErrorFormat;
+
+            log("SLA={0} Response={1} ResponseTime={2} milliseconds CorrelationId={3}",new object[] {definition.Request.Type, definition.Response.Type, (long)elapsed.TotalMilliseconds, correlationId});
         }
     }
 }

@@ -101,7 +101,7 @@ configuration: Release
 
 build:
   parallel: true                  # enable MSBuild parallel builds
-  project: Wonga.SLAMonitor\Wonga.SLAMonitor.sln      # path to Visual Studio solution or project
+  project: Wonga.SLAMonitor.sln      # path to Visual Studio solution or project
   #publish_nuget: true             # package projects with .nuspec files and push to artifacts
   #publish_nuget_symbols: true     # generate and publish NuGet symbol packages
   #include_nuget_references: true  # add -IncludeReferencedProjects option while packaging NuGet artifacts
@@ -112,7 +112,7 @@ build:
 
 # scripts to run before build
 before_build:
-  - nuget restore Wonga.SLAMonitor
+  - nuget restore .
 
 # scripts to run after build
 #after_build:

@@ -20,6 +20,8 @@ namespace Wonga.SLAMonitor.Async
         /// </summary>
         public Guid GetCorrelationId(object message)
         {
+            if (message == null) 
+                throw new ArgumentNullException("message");
             if (!Type.IsInstanceOfType(message))
                 throw new InvalidOperationException(string.Format("The specified message is not of {0} type: {1}", Type, message.GetType()));
             return _correlationFn(message);
@@ -36,6 +38,11 @@ namespace Wonga.SLAMonitor.Async
         public static MessageDefinition Create<TMessage>(Func<TMessage, Guid> correlationFn)
         {
             return new MessageDefinition(typeof(TMessage), m => correlationFn.Invoke((TMessage)m));
+        }
+
+        public override string ToString()
+        {
+            return Type.ToString();
         }
     }
 }
