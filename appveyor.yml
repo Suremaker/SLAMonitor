@@ -164,6 +164,17 @@ before_build:
 #---------------------------------#
 
 artifacts:
-  - path: *.nupkg
 
+  # pushing a single file
+#  - path: test.zip
+
+  # pushing a single file with environment variable in path and "Deployment name" specified
+#  - path: MyProject\bin\$(configuration)
+#    name: myapp
+
+  # pushing entire folder as a zip archive
+#  - path: logs
+
+  # pushing all *.nupkg files in directory
+  - path: *.nupkg
 
