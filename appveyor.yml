@@ -112,7 +112,7 @@ build:
 
 # scripts to run before build
 before_build:
-  - nuget restore Wonga.SLAMonitor
+  - nuget restore .
 
 # scripts to run after build
 #after_build:
