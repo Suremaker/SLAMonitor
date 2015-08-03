@@ -176,5 +176,5 @@ artifacts:
 #  - path: logs
 
   # pushing all *.nupkg files in directory
-  - path: *.nupkg
+  - path: "*.nupkg"
 
