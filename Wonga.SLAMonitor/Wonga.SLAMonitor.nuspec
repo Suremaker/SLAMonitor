@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Wonga.SLAMonitor</id>
+	<title>SLAMonitor</id>
+    <version>$version$</version>
+    <summary>Logging framework for capturing SLA metrics for external requests</summary>
+    <language>en-GB</language>
+    <authors>wongatech</authors>
+    <description>Logging framework for capturing SLA metrics for external requests</description>
+	<projectUrl>https://github.com/wongatech/SLAMonitor</projectUrl>
+	<licenseUrl>https://raw.githubusercontent.com/wongatech/SLAMonitor/master/LICENSE</licenseUrl>
+	<tags>log logging sla</tags>
+  </metadata>
+</package>
+
