@@ -116,7 +116,7 @@ before_build:
 
 # scripts to run after build
 after_build:
-  - nuget pack .\Wonga.SLAMonitor\Wonga.SLAMonitor.csproj
+  - nuget pack .\Wonga.SLAMonitor\Wonga.SLAMonitor.csproj -Properties Configuration=Release
 # to run your custom scripts instead of automatic MSBuild
 #build_script:
 
