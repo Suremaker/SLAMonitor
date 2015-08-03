@@ -115,8 +115,8 @@ before_build:
   - nuget restore .
 
 # scripts to run after build
-#after_build:
-
+after_build:
+  - nuget pack .\Wonga.SLAMonitor\Wonga.SLAMonitor.csproj
 # to run your custom scripts instead of automatic MSBuild
 #build_script:
 
@@ -176,5 +176,5 @@ artifacts:
 #  - path: logs
 
   # pushing all *.nupkg files in directory
-  - path: "**\\*.nupkg"
+  - path: "Wonga.SLAMonitor.*.nupkg"
 
