@@ -32,6 +32,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Moq, Version=4.2.1409.1722, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
       <HintPath>..\packages\Moq.4.2.1409.1722\lib\net40\Moq.dll</HintPath>
       <Private>True</Private>
@@ -46,8 +50,10 @@
   <ItemGroup>
     <Compile Include="Async\MessageDefinitionTests.cs" />
     <Compile Include="Async\SlaDefinitionBuilderTests.cs" />
+    <Compile Include="Async\SlaProcessorIntegrationTests.cs" />
     <Compile Include="Async\SlaProcessorTests.cs" />
     <Compile Include="Async\SlaProviderTests.cs" />
+    <Compile Include="Helpers\InMemoryAppender.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
